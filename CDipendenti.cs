@@ -47,6 +47,15 @@ namespace Flotta
             }
         }
 
-        public bool haPatenteValida() {}
+        public bool haPatenteValida() // non ho capito cosa si intende nella traccia (non esiste alcuna scadenza di patente), quindi controllo se ha un numero di patente
+        {
+            if (_numeropatente == null)
+            {
+                return false;
+            } else
+            {
+                return true;
+            }
+        }
     }
 }
