@@ -90,7 +90,7 @@ namespace Flotta
 
             if (Data == null)
             {
-                data = "Revisione mai effettuata";
+                data = "mai effettuata";
             } else
             {
                 data = Data;
