@@ -1,4 +1,5 @@
 using System;
+using System.Threading.Tasks.Dataflow;
 
 namespace Flotta
 {
@@ -40,9 +41,19 @@ namespace Flotta
         public CPrenotazione(string codice, DateTime datainizio, DateTime datafine, int km)
         {
             Codice = codice;
+
+            if(datainizio>datafine)
+            {
+                throw new ArgumentException("la data di inizio non può essere maggiore di quella finale");
+            }
             dataInizio = datainizio;
             dataFine = datafine;
             kmPercorsi = km;
+        }
+
+        public int CalcolaGiorni()
+        {
+            return (dataFine.Date-dataInizio.Date).Days; // Days prende solo i giorni interi, .Date toglie l'ora e da i giorni di calendario
         }
 
     }

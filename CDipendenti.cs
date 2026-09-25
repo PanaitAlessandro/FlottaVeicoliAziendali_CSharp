@@ -34,7 +34,7 @@ namespace Flotta
             }
         }
 
-        public string numeroPatente
+        public int numeroPatente
         {
             get => _numeropatente;
             private set
