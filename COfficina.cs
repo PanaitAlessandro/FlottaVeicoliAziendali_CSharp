@@ -55,5 +55,15 @@ namespace Flotta
             Nome = nome;
             numeroTelefono = numerot;
         }
+
+        public void InviaInRiparazione(CVeicolo veicolo)
+        {
+            if (veicolo == null)
+            {
+                throw new ArgumentException("Il veicolo non può essere null");
+            }
+
+            Console.WriteLine($"Il veicolo {veicolo.Targa} è stato inviato in riparazione presso {Nome}");
+        }
     }
 }
