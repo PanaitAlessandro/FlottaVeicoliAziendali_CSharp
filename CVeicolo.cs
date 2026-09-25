@@ -71,5 +71,10 @@ namespace Flotta
             }
     }
 
+
+    public CVeicolo() : this() {}
+
+    
+
   }
 }
