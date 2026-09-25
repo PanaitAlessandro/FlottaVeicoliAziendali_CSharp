@@ -5,7 +5,7 @@ namespace Flotta
     public class CVeicolo {
      private string _targa;
      private string _modello;
-     private DateTime _data; // DateTime.Now mi indica l'rario attual
+     private DateTime _data; // DateTime.Now mi indica l'rario attual // data: data ultima revisione
 
     private string _tipocarburante;
     private int _chilometraggio;
@@ -72,9 +72,16 @@ namespace Flotta
     }
 
 
-    public CVeicolo() : this() {}
+    public CVeicolo() : this("N/A", "SCONOSCIUTO", DateTime.Now, "SCONOSCIUTO", 0) {}
 
-    
+    public CVeicolo(string targa, string modello, DateTime data,string tipocarburante,int chilometraggio)
+        {
+            Targa = targa;
+            Modello = modello;
+            Data = data;
+            tipoCarburante = tipocarburante;
+            Chilometraggio = chilometraggio;
+        }
 
   }
 }
