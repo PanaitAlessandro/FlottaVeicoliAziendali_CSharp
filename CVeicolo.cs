@@ -82,7 +82,10 @@ namespace Flotta
             Chilometraggio = chilometraggio;
         }
 
-
+        public override string ToString()
+        {
+            return $"Targa: {Targa}, Modello: {Modello}, TipoCarburante: {tipoCarburante}, Chilometraggio: {Chilometraggio}";
+        }
     
   }
 }
