@@ -46,5 +46,14 @@ namespace Flotta
                 _numerotel = value;
             }
         }
+
+        public COfficina() : this("N/A", "SCONOSCIUTO", "N/A") {}
+
+        public COfficina(string partitaiva, string nome, string numerot)
+        {
+            partitaIva = partitaiva;
+            Nome = nome;
+            numeroTelefono = numerot;
+        }
     }
 }
