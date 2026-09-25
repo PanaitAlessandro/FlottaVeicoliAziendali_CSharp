@@ -26,5 +26,10 @@ namespace Flotta
         {
             ragioneSociale = ragionesociale;
         }
+
+        public override string ToString()
+        {
+            return $"Ragione Sociale: {ragioneSociale}";
+        }
     }
 }
