@@ -18,8 +18,13 @@ namespace Flotta
                 }
                 _ragionesociale = value;
             }
+        }
 
-            
+        public CAzienda() : this("SCONOSCIUTA") {}
+
+        public CAzienda(string ragionesociale)
+        {
+            ragioneSociale = ragionesociale;
         }
     }
 }
