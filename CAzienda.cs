@@ -76,7 +76,14 @@ namespace Flotta
 
         public override string ToString()
         {
-            return $"Ragione Sociale: {ragioneSociale}";
+            string testo = $"Ragione Sociale: {ragioneSociale}";
+
+            for (int i = 0; i < _flotta.Length; i++)
+            {
+                testo += $"\n{_flotta[i].Modello}: {_flotta[i].Targa}";
+            }
+
+            return testo;
         }
     }
 }
