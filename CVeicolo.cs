@@ -45,6 +45,31 @@ namespace Flotta
             }
     }
 
-    
+    public string tipoCarburante
+    {
+        get => _tipocarburante;
+        private set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Il tipo di carburante non può essere null");
+                }
+                _tipocarburante = value;
+            }
+    }
+
+    public int Chilometraggio
+    {
+        get => _chilometraggio;
+        private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Chilometraggio non può essere negatico");
+                }
+                _chilometraggio = value;
+            }
+    }
+
   }
 }
