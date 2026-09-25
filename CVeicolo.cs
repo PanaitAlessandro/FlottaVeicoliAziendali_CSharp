@@ -72,16 +72,17 @@ namespace Flotta
     }
 
 
-    public CVeicolo() : this("N/A", "SCONOSCIUTO", DateTime.Now, "SCONOSCIUTO", 0) {}
+    public CVeicolo() : this("N/A", "SCONOSCIUTO", "SCONOSCIUTO", 0) {}
 
-    public CVeicolo(string targa, string modello, DateTime data,string tipocarburante,int chilometraggio)
+    public CVeicolo(string targa, string modello, string tipocarburante,int chilometraggio)
         {
             Targa = targa;
             Modello = modello;
-            Data = data;
             tipoCarburante = tipocarburante;
             Chilometraggio = chilometraggio;
         }
 
+
+    
   }
 }
