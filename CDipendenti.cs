@@ -47,6 +47,15 @@ namespace Flotta
             }
         }
 
+        public CDipendenti() : this("N/A", "SCONOSCIUTO", 0) {}
+
+        public CDipendenti(string matricola, string cognome, int numeropatente)
+        {
+            Matricola = matricola;
+            Cognome = cognome;
+            numeroPatente = numeropatente;
+        }
+
         public bool haPatenteValida() // non ho capito cosa si intende nella traccia (non esiste alcuna scadenza di patente), quindi controllo se ha un numero di patente
         {
             if (_numeropatente == null)
