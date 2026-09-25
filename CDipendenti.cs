@@ -20,5 +20,33 @@ namespace Flotta
                 _matricola = value;
             }
         }
+
+        public string Cognome
+        {
+            get => _cognome;
+            private set
+            {
+                if (string.IsNullOrWhiteSpace(value))
+                {
+                    throw new ArgumentException("Cognome non può essere null");
+                }
+                _cognome = value;
+            }
+        }
+
+        public string numeroPatente
+        {
+            get => _numeropatente;
+            private set
+            {
+                if (value < 0)
+                {
+                    throw new ArgumentException("Il numero della patente non può essere negativo");
+                }
+                _numeropatente = value;
+            }
+        }
+
+        public bool haPatenteValida() {}
     }
 }
