@@ -5,7 +5,7 @@ namespace Flotta
     public class CVeicolo {
      private string _targa;
      private string _modello;
-     private DateTime _data; // DateTime.Now mi indica l'rario attual // data: data ultima revisione
+     private string _data; 
 
     private string _tipocarburante;
     private int _chilometraggio;
@@ -36,7 +36,7 @@ namespace Flotta
             }
     }
 
-    public DateTime Data
+    public string Data
     {
         get => _data;
         private set
@@ -72,19 +72,30 @@ namespace Flotta
     }
 
 
-    public CVeicolo() : this("N/A", "SCONOSCIUTO", "SCONOSCIUTO", 0) {}
+    public CVeicolo() : this("N/A", "SCONOSCIUTO", null,"SCONOSCIUTO", 0) {}
 
-    public CVeicolo(string targa, string modello, string tipocarburante,int chilometraggio)
+    public CVeicolo(string targa, string modello, string data, string tipocarburante,int chilometraggio)
         {
             Targa = targa;
             Modello = modello;
+            Data = data;
             tipoCarburante = tipocarburante;
             Chilometraggio = chilometraggio;
         }
 
         public override string ToString()
         {
-            return $"Targa: {Targa}, Modello: {Modello}, TipoCarburante: {tipoCarburante}, Chilometraggio: {Chilometraggio}";
+
+            string data;
+
+            if (Data == null)
+            {
+                data = "Revisione mai effettuata";
+            } else
+            {
+                data = Data;
+            }
+            return $"Targa: {Targa}, Modello: {Modello}, Revisione: {data}, TipoCarburante: {tipoCarburante}, Chilometraggio: {Chilometraggio}";
         }
     
   }
