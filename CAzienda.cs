@@ -34,7 +34,7 @@ namespace Flotta
             }
         }
 
-        public CAzienda() : this("SCONOSCIUTA") {}
+        public CAzienda() : this("SCONOSCIUTA", new CVeicolo[0]) {}
 
         public CAzienda(string ragionesociale, CVeicolo[] flotta)
         {
@@ -60,6 +60,7 @@ namespace Flotta
             {
                 somma += _flotta[i].Chilometraggio;
             }
+            return somma;
         }
 
         public double KilometraggioMedio()
@@ -69,7 +70,7 @@ namespace Flotta
             {
                 media += _flotta[i].Chilometraggio;
             }
-            media / _flotta.Length;
+            media = media / _flotta.Length;
             return media;
         }
 
