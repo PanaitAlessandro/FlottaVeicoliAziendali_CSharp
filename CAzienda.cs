@@ -5,7 +5,21 @@ namespace Flotta
     public class CAzienda
     {
         private string _ragionesociale;
-        // todo: aggiungere array flotta di CVeicoli
+        // todo: aggiungere array flotta di CVeicolo
+        private CVeicolo[] _flotta;
+
+        public CVeicolo[] Flotta
+        {
+            get => _flotta;
+            private set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("La flotta non può essere null");
+                }
+            _flotta = value;
+            }
+        }
 
         public string ragioneSociale
         {
@@ -22,9 +36,10 @@ namespace Flotta
 
         public CAzienda() : this("SCONOSCIUTA") {}
 
-        public CAzienda(string ragionesociale)
+        public CAzienda(string ragionesociale, CVeicolo[] flotta)
         {
             ragioneSociale = ragionesociale;
+            Flotta = flotta;
         }
 
         public override string ToString()
