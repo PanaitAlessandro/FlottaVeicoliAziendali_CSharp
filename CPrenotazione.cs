@@ -5,8 +5,8 @@ namespace Flotta
     public class CPrenotazione
     {
         private string _codice;
-        private DateTime _datainizio {get; private set;}
-        private DateTime _datafine {get; private set;}
+        public DateTime dataInizio {get; private set;}
+        public DateTime dataFine {get; private set;}
         private int _kmpercorsi;
 
         public string Codice
@@ -33,6 +33,16 @@ namespace Flotta
                 }
                 _kmpercorsi = value;
             }
+        }
+
+        public CPrenotazione() : this("SCONOSCIUTO", DateTime.Now, DateTime.Now, 0) {}
+
+        public CPrenotazione(string codice, DateTime datainizio, DateTime datafine, int km)
+        {
+            Codice = codice;
+            dataInizio = datainizio;
+            dataFine = datafine;
+            kmPercorsi = km;
         }
 
     }
