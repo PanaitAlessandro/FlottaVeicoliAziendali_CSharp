@@ -39,7 +39,7 @@ namespace Flotta
             get => _numeropatente;
             private set
             {
-                if (value < 0)
+                if (value <= 0)
                 {
                     throw new ArgumentException("Il numero della patente non può essere negativo");
                 }
@@ -58,13 +58,7 @@ namespace Flotta
 
         public bool haPatenteValida() // non ho capito cosa si intende nella traccia (non esiste alcuna scadenza di patente), quindi controllo se ha un numero di patente
         {
-            if (_numeropatente == null)
-            {
-                return false;
-            } else
-            {
-                return true;
-            }
+            return (numeroPatente > 0);
         }
     }
 }
