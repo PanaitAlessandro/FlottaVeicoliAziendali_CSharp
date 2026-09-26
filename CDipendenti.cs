@@ -8,6 +8,20 @@ namespace Flotta
         private string _cognome;
         private int _numeropatente;
 
+        private CPrenotazione[] _prenotazioni;
+
+        public CPrenotazione[] Prenotazioni
+        {
+            get => _prenotazioni;
+            private set
+            {
+                if (_prenotazioni == null)
+                {
+                    throw new ArgumentException("Le prenotazioni non possono essere null");
+                }
+            }
+        }
+
         public string Matricola
         {
             get => _matricola;
