@@ -56,5 +56,10 @@ namespace Flotta
             return (dataFine.Date-dataInizio.Date).Days; // Days prende solo i giorni interi, .Date toglie l'ora e da i giorni di calendario
         }
 
+        public override string ToString()
+        {
+            return $"Codice: {Codice}, DataInizio: {dataInizio}, DataFine: {dataFine}, KmPercorsi: {kmPercorsi}";
+        }
+
     }
 }

@@ -78,7 +78,13 @@ namespace Flotta
 
         public override string ToString()
         {
-            return $"Matricola: {Matricola}, Cognome: {Cognome}, NumeroPatente: {numeroPatente}";
+            string testo = $"Matricola: {Matricola}, Cognome: {Cognome}, NumeroPatente: {numeroPatente}";
+            testo += $"\n Lista Prenotazioni:";
+
+            for (int i = 0; i < _prenotazioni.Length; i++)
+            {
+                testo += $"\n Prenotazione[{i}]: {_prenotazioni[i]}";
+            }
         }
     }
 }
