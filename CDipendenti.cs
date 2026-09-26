@@ -63,11 +63,12 @@ namespace Flotta
 
         public CDipendenti() : this("N/A", "SCONOSCIUTO", 1, new CPrenotazione[0]) {}
 
-        public CDipendenti(string matricola, string cognome, int numeropatente)
+        public CDipendenti(string matricola, string cognome, int numeropatente, CPrenotazione prenotazioni)
         {
             Matricola = matricola;
             Cognome = cognome;
             numeroPatente = numeropatente;
+            Prenotazioni = prenotazioni;
         }
 
         public bool haPatenteValida() // non ho capito cosa si intende nella traccia (non esiste alcuna scadenza di patente), quindi controllo se ha un numero di patente
