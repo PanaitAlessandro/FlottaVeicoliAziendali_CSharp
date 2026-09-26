@@ -47,7 +47,7 @@ namespace Flotta
             }
         }
 
-        public CDipendenti() : this("N/A", "SCONOSCIUTO", 0) {}
+        public CDipendenti() : this("N/A", "SCONOSCIUTO", 1) {}
 
         public CDipendenti(string matricola, string cognome, int numeropatente)
         {
@@ -59,6 +59,11 @@ namespace Flotta
         public bool haPatenteValida() // non ho capito cosa si intende nella traccia (non esiste alcuna scadenza di patente), quindi controllo se ha un numero di patente
         {
             return (numeroPatente > 0);
+        }
+
+        public override string ToString()
+        {
+            return $"Matricola: {Matricola}, Cognome: {Cognome}, NumeroPatente: {numeroPatente}";
         }
     }
 }

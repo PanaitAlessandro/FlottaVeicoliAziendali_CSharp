@@ -14,7 +14,12 @@ class Program
             new CVeicolo("SU281S", "PUNTO", "25 Settembre 2026", "BENZINA", 100)
         };
 
-        CAzienda azienda = new CAzienda("Rossi Spa", flotta);
+        CDipendenti[] dipendenti =
+            {
+                new CDipendenti("ABC", "ROSSI", 10)
+            };
+
+        CAzienda azienda = new CAzienda("Rossi Spa", flotta, dipendenti);
 
         for (int i = 0; i < flotta.Length; i++)
         {
