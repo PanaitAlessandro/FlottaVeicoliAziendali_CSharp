@@ -91,6 +91,11 @@ namespace Flotta
                     throw new ArgumentException("Questa prenotazione è già presente");
                 }
             }
+
+            if (!haPatenteValida())
+            {
+                throw new ArgumentException("Patente non valida");
+            }
             Array.Resize(ref _prenotazioni, _prenotazioni.Length+1);
             _prenotazioni[_prenotazioni.Length-1] = prenotazione;
         }
