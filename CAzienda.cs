@@ -7,6 +7,7 @@ namespace Flotta
         private string _ragionesociale;
         // todo: aggiungere array flotta di CVeicolo (DONE)
         private CVeicolo[] _flotta;
+        private CDipendenti[] _dipendenti;
 
         public CVeicolo[] Flotta
         {
@@ -18,6 +19,19 @@ namespace Flotta
                     throw new ArgumentException("La flotta non può essere null");
                 }
             _flotta = value;
+            }
+        }
+
+        public CDipendenti[] Dipendenti
+        {
+            get => _dipendenti;
+            private set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("I dipendenti non possono essere null");
+                }
+            _dipendenti = value;
             }
         }
 
@@ -34,12 +48,13 @@ namespace Flotta
             }
         }
 
-        public CAzienda() : this("SCONOSCIUTA", new CVeicolo[0]) {}
+        public CAzienda() : this("SCONOSCIUTA", new CVeicolo[0], new CDipendenti[0]) {}
 
-        public CAzienda(string ragionesociale, CVeicolo[] flotta)
+        public CAzienda(string ragionesociale, CVeicolo[] flotta, CDipendenti[] dipendenti)
         {
             ragioneSociale = ragionesociale;
             Flotta = flotta;
+            Dipendenti = dipendenti;
         }
 
         public void CercaPerCarburante(string tipoAlimentazione)
@@ -81,6 +96,11 @@ namespace Flotta
             for (int i = 0; i < _flotta.Length; i++)
             {
                 testo += $"\n{_flotta[i].Modello}: {_flotta[i].Targa}";
+            }
+
+            for (int i = 0; i < _dipendenti.Length; i++)
+            {
+                testo += $"\nDipendente {i}: {_dipendenti[i]}";
             }
 
             return testo;
