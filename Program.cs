@@ -7,17 +7,34 @@ class Program
     static void Main(string[] args)
     {
 
-        CVeicolo[] flotta =
-        {
-            new CVeicolo("ABCED", "PANDA", "25 Settembre 2026", "DIESEL", 100),
-            new CVeicolo("DJJWDS", "TESLA", null, "ELETTRICA", 5020),
-            new CVeicolo("SU281S", "PUNTO", "25 Settembre 2026", "BENZINA", 100)
-        };
+
 
         CPrenotazione[] prenotazioni =
             {
-                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250)
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
+            };  
+
+        CPrenotazione[] prenotazioni1 =
+            {
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
+            };  
+
+        CPrenotazione[] prenotazioni2 =
+            {
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250),
             };     
+         CVeicolo[] flotta =
+        {
+            new CVeicolo("ABCED", "PANDA", "25 Settembre 2026", "DIESEL", 100,prenotazioni),
+            new CVeicolo("DJJWDS", "TESLA", null, "ELETTRICA", 5020, prenotazioni1),
+            new CVeicolo("SU281S", "PUNTO", "25 Settembre 2026", "BENZINA", 100, prenotazioni2)
+        };
 
         CDipendenti[] dipendenti =
             {

@@ -10,6 +10,21 @@ namespace Flotta
     private string _tipocarburante;
     private int _chilometraggio;
 
+    private CPrenotazione[] _prenotazioni;
+
+    public CPrenotazione[] Prenotazioni
+        {
+            get => _prenotazioni;
+            private set
+            {
+                if (value == null)
+                {
+                    throw new ArgumentException("Le prenotazioni non possono essere null");
+                }
+                _prenotazioni = value;
+            }
+        }
+
     public string Targa
     {
         get => _targa;
@@ -72,15 +87,34 @@ namespace Flotta
     }
 
 
-    public CVeicolo() : this("N/A", "SCONOSCIUTO", null,"SCONOSCIUTO", 0) {}
+    public CVeicolo() : this("N/A", "SCONOSCIUTO", null,"SCONOSCIUTO", 0, new CPrenotazione[0]) {}
 
-    public CVeicolo(string targa, string modello, string data, string tipocarburante,int chilometraggio)
+    public CVeicolo(string targa, string modello, string data, string tipocarburante,int chilometraggio, CPrenotazione[] prenotazioni)
         {
             Targa = targa;
             Modello = modello;
             Data = data;
             tipoCarburante = tipocarburante;
             Chilometraggio = chilometraggio;
+            Prenotazioni = prenotazioni;
+        }
+
+    public void AggiungiPrenotazione(CPrenotazione prenotazione)
+        {
+            if (prenotazione == null)
+            {
+                throw new ArgumentException("La prenotazione NON può essere null");
+            }
+
+            for (int i = 0; i < _prenotazioni.Length; i++)
+            {
+                if (_prenotazioni[i] == prenotazione)
+                {
+                    throw new ArgumentException("Questa prenotazione è già presente");
+                }
+            }
+            Array.Resize(ref _prenotazioni, _prenotazioni.Length+1);
+            _prenotazioni[_prenotazioni.Length-1] = prenotazione;
         }
 
         public override string ToString()
@@ -97,6 +131,5 @@ namespace Flotta
             }
             return $"Targa: {Targa}, Modello: {Modello}, Revisione: {data}, TipoCarburante: {tipoCarburante}, Chilometraggio: {Chilometraggio}";
         }
-    
-  }
+    }
 }

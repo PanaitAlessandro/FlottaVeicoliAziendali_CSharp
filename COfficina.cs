@@ -8,6 +8,8 @@ namespace Flotta
         private string _nome;
         private string _numerotel;
 
+        private CVeicolo[] _veicoli;
+
         public string partitaIva
         {
             get => _partitaiva;
