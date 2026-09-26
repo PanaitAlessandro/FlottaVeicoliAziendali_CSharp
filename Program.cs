@@ -14,9 +14,14 @@ class Program
             new CVeicolo("SU281S", "PUNTO", "25 Settembre 2026", "BENZINA", 100)
         };
 
+        CPrenotazione[] prenotazioni =
+            {
+                new CPrenotazione("COD30", DateTime.Now, DateTime.Now, 250)
+            };     
+
         CDipendenti[] dipendenti =
             {
-                new CDipendenti("ABC", "ROSSI", 10)
+                new CDipendenti("ABC", "ROSSI", 10,prenotazioni)
             };
 
         CAzienda azienda = new CAzienda("Rossi Spa", flotta, dipendenti);

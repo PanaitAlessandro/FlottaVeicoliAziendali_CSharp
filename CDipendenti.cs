@@ -15,10 +15,11 @@ namespace Flotta
             get => _prenotazioni;
             private set
             {
-                if (_prenotazioni == null)
+                if (value == null)
                 {
                     throw new ArgumentException("Le prenotazioni non possono essere null");
                 }
+                _prenotazioni = value;
             }
         }
 
@@ -63,7 +64,7 @@ namespace Flotta
 
         public CDipendenti() : this("N/A", "SCONOSCIUTO", 1, new CPrenotazione[0]) {}
 
-        public CDipendenti(string matricola, string cognome, int numeropatente, CPrenotazione prenotazioni)
+        public CDipendenti(string matricola, string cognome, int numeropatente, CPrenotazione[] prenotazioni)
         {
             Matricola = matricola;
             Cognome = cognome;
@@ -85,6 +86,8 @@ namespace Flotta
             {
                 testo += $"\n Prenotazione[{i}]: {_prenotazioni[i]}";
             }
+
+            return testo;
         }
     }
 }
