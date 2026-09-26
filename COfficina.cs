@@ -101,5 +101,17 @@ namespace Flotta
             Array.Resize(ref _veicoli, _veicoli.Length+1);
             _veicoli[_veicoli.Length-1] = veicolo;
         }
+
+        public override string ToString()
+        {
+            string testo = $"Partita IVA: {partitaIva}, Nome: {Nome}, Numero. Telefono: {numeroTelefono}";
+
+            for (int i = 0; i < _veicoli.Length; i++)
+            {
+                testo += $"\n Veicolo Officina: {_veicoli[i]}";
+            }
+
+            return testo;
+        }
     }
 }

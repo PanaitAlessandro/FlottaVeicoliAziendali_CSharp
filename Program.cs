@@ -49,6 +49,7 @@ class Program
         }
 
         COfficina officina = new COfficina("IT30029429102", "GIANNI OFFICINA", "+39 3925922200", flotta);
+        System.Console.WriteLine(officina);
 
         System.Console.WriteLine(azienda.KilometraggioTotale());
         System.Console.WriteLine(azienda.KilometraggioMedio());
