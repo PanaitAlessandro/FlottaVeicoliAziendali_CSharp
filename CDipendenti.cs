@@ -61,7 +61,7 @@ namespace Flotta
             }
         }
 
-        public CDipendenti() : this("N/A", "SCONOSCIUTO", 1) {}
+        public CDipendenti() : this("N/A", "SCONOSCIUTO", 1, new CPrenotazione[0]) {}
 
         public CDipendenti(string matricola, string cognome, int numeropatente)
         {
