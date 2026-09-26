@@ -77,6 +77,24 @@ namespace Flotta
             return (numeroPatente > 0);
         }
 
+        public void AggiungiPrenotazione(CPrenotazione prenotazione)
+        {
+            if (prenotazione == null)
+            {
+                throw new ArgumentException("La prenotazione NON può essere null");
+            }
+
+            for (int i = 0; i < _prenotazioni.Length; i++)
+            {
+                if (_prenotazioni[i] == prenotazione)
+                {
+                    throw new ArgumentException("Questa prenotazione è già presente");
+                }
+            }
+            Array.Resize(ref _prenotazioni, _prenotazioni.Length+1);
+            _prenotazioni[_prenotazioni.Length-1] = prenotazione;
+        }
+
         public override string ToString()
         {
             string testo = $"Matricola: {Matricola}, Cognome: {Cognome}, NumeroPatente: {numeroPatente}";
